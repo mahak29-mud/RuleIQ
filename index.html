@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <link rel="icon" type="image/png" href="favicon.jpg">
+
+    <title>RuleIQ — Regulation Intelligence</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                R
+            </div>
+
+            <div>
+
+                <h2>RuleIQ</h2>
+
+                <span>
+                    Regulation Intelligence
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <!-- DASHBOARD -->
+
+            <button
+                class="nav-item active"
+                type="button"
+                onclick="navigateToSection('dashboardSection', this)"
+            >
+
+                <span>⌂</span>
+
+                Dashboard
+
+            </button>
+
+
+            <!-- ASK RULES -->
+
+            <button
+                class="nav-item"
+                type="button"
+                onclick="navigateToSection('askRulesSection', this)"
+            >
+
+                <span>⌕</span>
+
+                Ask Rules
+
+            </button>
+
+
+            <!-- MY SITUATION -->
+
+            <button
+                class="nav-item"
+                type="button"
+                onclick="navigateToSection('mySituationSection', this)"
+            >
+
+                <span>◈</span>
+
+                My Situation
+
+            </button>
+
+
+            <!-- WHAT IF -->
+
+            <button
+                class="nav-item"
+                type="button"
+                onclick="navigateToSection('whatIfSection', this)"
+            >
+
+                <span>↻</span>
+
+                What-If
+
+            </button>
+
+
+            <!-- RULE GRAPH -->
+
+            <button
+                class="nav-item"
+                type="button"
+                onclick="navigateToSection('ruleGraphSection', this)"
+            >
+
+                <span>◎</span>
+
+                Rule Graph
+
+            </button>
+            <!-- CHALLENGE MODE -->
+
+        <button class="nav-item" type="button" onclick="navigateToSection('challengeSection', this)" 
+        >
+
+         <span>🎯</span>
+
+        Challenge Mode
+
+        </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="status-dot"></div>
+
+            <div>
+
+                <strong>
+                    Rulebook Online
+                </strong>
+
+                <small>
+                    <span id="sidebarRuleCount">3</span>
+                    rules indexed
+                </small>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="main">
+
+
+        <!-- =================================================
+             DASHBOARD
+             ================================================= -->
+
+        <section id="dashboardSection">
+
+
+            <!-- HEADER -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <p class="eyebrow">
+                        REGULATION INTELLIGENCE
+                    </p>
+
+                    <h1>
+
+                        Understand the rules.
+
+                        <span>
+                            Apply them to your situation.
+                        </span>
+
+                    </h1>
+
+                    <p class="subtitle">
+
+                        RuleIQ connects regulations,
+                        exceptions and requirements to explain
+                        exactly which rules apply.
+
+                    </p>
+
+                </div>
+
+
+                <div class="api-status">
+
+                    <span></span>
+
+                    API Connected
+
+                </div>
+
+            </header>
+
+
+
+            <!-- STATISTICS -->
+
+            <section class="stats">
+
+
+                <div class="stat-card">
+
+                    <span>
+                        RULES INDEXED
+                    </span>
+
+                    <strong id="ruleCount">
+                        3
+                    </strong>
+
+                    <small>
+                        From university rulebook
+                    </small>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <span>
+                        DECISION ENGINE
+                    </span>
+
+                    <strong>
+                        ACTIVE
+                    </strong>
+
+                    <small>
+                        Condition-based reasoning
+                    </small>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <span>
+                        EVIDENCE MODE
+                    </span>
+
+                    <strong>
+                        ON
+                    </strong>
+
+                    <small>
+                        Every decision has sources
+                    </small>
+
+                </div>
+
+
+            </section>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MY SITUATION / DECISION ENGINE
+             ================================================= -->
+
+        <section
+            class="workspace"
+            id="mySituationSection"
+        >
+
+
+            <!-- SITUATION -->
+
+            <div class="panel situation-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            DECISION ENGINE
+                        </p>
+
+                        <h2>
+                            Evaluate My Situation
+
+                        </h2>
+
+                    </div>
+
+
+                    <span class="step">
+                        STEP 01
+                    </span>
+
+                </div>
+
+
+                <p class="panel-description">
+
+                    Enter your circumstances and RuleIQ
+                    will determine which regulation path applies.
+
+                </p>
+
+
+
+                <!-- ATTENDANCE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Attendance Percentage
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <input
+                            type="number"
+                            id="attendance"
+                            placeholder="e.g. 68"
+                            min="0"
+                            max="100"
+                        >
+
+                        <span>
+                            %
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MEDICAL -->
+
+                <div class="toggle-row">
+
+                    <div>
+
+                        <strong>
+                            Medical Certificate
+                        </strong>
+
+                        <small>
+                            Do you have valid medical documentation?
+                        </small>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="medical"
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- APPROVAL -->
+
+                <div class="toggle-row">
+
+                    <div>
+
+                        <strong>
+                            Academic Approval
+                        </strong>
+
+                        <small>
+                            Has the required authority approved it?
+                        </small>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="approval"
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    onclick="evaluateSituation()">
+
+                    Evaluate Situation
+                </button>
+
+                    <span>
+                        →
+                    </span>
+
+            </div>
+
+
+
+            <!-- RESULT -->
+
+            <div class="panel result-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            DECISION
+                        </p>
+
+                        <h2>
+                            RuleIQ Analysis
+                        </h2>
+
+                    </div>
+
+
+                    <span
+                        id="decisionStatus"
+                        class="status neutral"
+                    >
+
+                        WAITING
+
+                    </span>
+
+                </div>
+
+
+
+                <div
+                    id="decisionResult"
+                    class="result-empty"
+                >
+
+                    <div class="result-icon">
+                        ◎
+                    </div>
+
+                    <h3>
+                        No situation evaluated
+                    </h3>
+
+                    <p>
+
+                        Enter your circumstances on the left
+                        to see the applicable regulation and reasoning.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             EVIDENCE
+             ================================================= -->
+
+        <section
+            class="panel evidence-panel"
+            id="evidenceSection"
+        >
+
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        EVIDENCE
+                    </p>
+
+                    <h2>
+                        Applicable Regulations
+                    </h2>
+
+                </div>
+
+
+                <span id="evidenceCount">
+                    0 SOURCES
+                </span>
+
+            </div>
+
+
+
+            <div
+                id="evidence"
+                class="evidence-container"
+            >
+
+                <div class="empty-evidence">
+
+                    Evidence will appear here after evaluation.
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ASK RULES
+             ================================================= -->
+
+        <section
+            class="panel ask-panel"
+            id="askRulesSection"
+        >
+
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        RULEBOOK Q&A
+                    </p>
+
+                    <h2>
+                        Ask the Rulebook
+                    </h2>
+
+                </div>
+
+
+                <span class="step">
+                    STEP 02
+                </span>
+
+            </div>
+
+
+
+            <p class="panel-description">
+
+                Ask a question about the regulations and
+                RuleIQ will find the most relevant provisions.
+
+            </p>
+
+
+
+            <div class="question-box">
+
+
+                <textarea
+                    id="ruleQuestion"
+                    placeholder="Example: Can I appear for my exam if my attendance is below 75%?"
+                ></textarea>
+
+
+
+                <button
+                    class="evaluate-btn"
+                    onclick="askRulebook()"
+                >
+
+                    Ask RuleIQ
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+
+            <div
+                id="questionResult"
+                class="question-result"
+            >
+
+                <div class="result-empty">
+
+                    <div class="result-icon">
+                        ⌕
+                    </div>
+
+                    <h3>
+                        Ask a question
+                    </h3>
+
+                    <p>
+
+                        Your answer and supporting regulations
+                        will appear here.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             WHAT IF
+             ================================================= -->
+
+        <section
+            class="what-if"
+            id="whatIfSection"
+        >
+
+
+            <div>
+
+                <p class="eyebrow">
+                    WHAT-IF SIMULATOR
+                </p>
+
+                <h2>
+                    What changes if one condition changes?
+                </h2>
+
+                <p>
+
+                    Change the conditions below and RuleIQ
+                    will recalculate the decision.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="what-if-controls">
+
+
+                <div class="what-if-field">
+
+                    <label for="whatIfAttendance">
+                        Attendance (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="whatIfAttendance"
+                        min="0"
+                        max="100"
+                        value="68"
+                    >
+
+                </div>
+
+
+
+                <div class="what-if-field">
+
+                    <label for="whatIfMedical">
+                        Medical Certificate
+                    </label>
+
+                    <select id="whatIfMedical">
+
+                        <option value="true">
+                            Yes
+                        </option>
+
+                        <option value="false">
+                            No
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="what-if-field">
+
+                    <label for="whatIfApproval">
+                        Approval
+                    </label>
+
+                    <select id="whatIfApproval">
+
+                        <option value="true">
+                            Yes
+                        </option>
+
+                        <option value="false">
+                            No
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <button
+                    type="button"
+                    onclick="runWhatIf()"
+                >
+
+                    Run What-If →
+
+                </button>
+
+
+            </div>
+
+
+
+            <div
+                id="whatIfResult"
+                class="what-if-result"
+            >
+
+                <div class="what-if-placeholder">
+
+                    Change a condition and run the simulator
+                    to see the new decision.
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             RULE GRAPH
+             ================================================= -->
+
+        <section
+            class="panel rule-graph-panel"
+            id="ruleGraphSection"
+        >
+
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="eyebrow">
+                        RULE DEPENDENCY GRAPH
+                    </p>
+
+                    <h2>
+                        How the Rules Connect
+                    </h2>
+
+                </div>
+
+
+                <span class="step">
+                    STEP 03
+                </span>
+
+            </div>
+
+
+
+            <p class="panel-description">
+
+                Explore how regulations, exceptions, requirements
+                and conflicts are connected.
+
+            </p>
+
+
+
+            <!-- GRAPH LEGEND -->
+
+            <div class="graph-legend">
+
+
+                <div class="legend-item">
+
+                    <span
+                        class="legend-dot legend-exception"
+                    ></span>
+
+                    <span>
+                        Exception
+                    </span>
+
+                </div>
+
+
+
+                <div class="legend-item">
+
+                    <span
+                        class="legend-dot legend-requires"
+                    ></span>
+
+                    <span>
+                        Requirement
+                    </span>
+
+                </div>
+
+
+
+                <div class="legend-item">
+
+                    <span
+                        class="legend-dot legend-conflict"
+                    ></span>
+
+                    <span>
+                        Conflict
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- GRAPH -->
+
+            <div
+                id="ruleGraphContainer"
+                class="rule-graph-container"
+            >
+
+                <div class="graph-loading">
+
+                    Loading rule relationships...
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <!-- =================================================
+     CHALLENGE MODE
+     ================================================= -->
+
+<section
+    class="panel challenge-panel"
+    id="challengeSection"
+>
+
+    <div class="panel-header">
+
+        <div>
+
+            <p class="eyebrow">
+                RULEIQ CHALLENGE
+            </p>
+
+            <h2>
+                🎯 What Would You Decide?
+            </h2>
+
+        </div>
+
+        <span
+            class="challenge-progress"
+            id="challengeProgress"
+        >
+            CASE 1 / 5
+        </span>
+
+    </div>
+
+
+    <p class="panel-description">
+
+        Test your understanding of the rulebook.
+        Make your decision first — then RuleIQ will
+        compare it with the actual rule-based decision.
+
+    </p>
+
+
+    <!-- CHALLENGE START -->
+
+    <div
+        id="challengeStart"
+        class="challenge-start"
+    >
+
+        <div class="challenge-icon">
+            🎯
+        </div>
+
+        <h3>
+            Ready for the challenge?
+        </h3>
+
+        <p>
+            You will face 5 situations.
+            Read each case carefully and choose
+            the decision you think the rulebook supports.
+        </p>
+
+        <button
+            type="button"
+            class="challenge-button"
+            onclick="startChallenge()"
+        >
+            Start Challenge →
+        </button>
+
+    </div>
+
+
+    <!-- CHALLENGE QUESTION -->
+
+    <div
+        id="challengeQuestion"
+        class="challenge-question"
+        style="display: none;"
+    >
+
+        <div class="case-badge">
+            CASE <span id="challengeCaseNumber">1</span>
+        </div>
+
+
+        <div
+            id="challengeScenario"
+            class="challenge-scenario"
+        >
+        </div>
+
+
+        <h3>
+            What should RuleIQ decide?
+        </h3>
+
+
+        <div
+            id="challengeOptions"
+            class="challenge-options"
+        >
+        </div>
+
+
+        <button
+            type="button"
+            id="challengeSubmit"
+            class="challenge-button"
+            onclick="submitChallengeAnswer()"
+            disabled
+        >
+            Submit Decision →
+        </button>
+
+    </div>
+
+
+    <!-- CHALLENGE RESULT -->
+
+    <div
+        id="challengeResult"
+        class="challenge-result"
+        style="display: none;"
+    >
+    </div>
+
+
+    <!-- FINAL SCORE -->
+
+    <div
+        id="challengeFinal"
+        class="challenge-final"
+        style="display: none;"
+    >
+
+        <div class="challenge-icon">
+            🏆
+        </div>
+
+        <p class="eyebrow">
+            CHALLENGE COMPLETE
+        </p>
+
+        <h2>
+            <span id="challengeScore">0</span> / 5
+        </h2>
+
+        <p id="challengeScoreMessage">
+            Great work!
+        </p>
+
+        <button
+            type="button"
+            class="challenge-button"
+            onclick="startChallenge()"
+        >
+            Try Again →
+        </button>
+
+    </div>
+
+</section>
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     NAVIGATION SCRIPT
+     ===================================================== -->
+
+<script>
+
+function navigateToSection(sectionId, clickedButton) {
+
+    const section =
+        document.getElementById(sectionId);
+
+    if (!section) {
+
+        console.error(
+            "Section not found:",
+            sectionId
+        );
+
+        return;
+
+    }
+
+
+    /*
+     * Remove active state from all
+     * sidebar navigation buttons.
+     */
+
+    const navItems =
+        document.querySelectorAll(
+            ".nav-item"
+        );
+
+    navItems.forEach(function(item) {
+
+        item.classList.remove("active");
+
+    });
+
+
+    /*
+     * Activate the button that
+     * the user clicked.
+     */
+
+    if (clickedButton) {
+
+        clickedButton.classList.add("active");
+
+    }
+
+
+    /*
+     * Smoothly move to the section.
+     */
+
+    section.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
+
+    });
+
+}
+
+
+
+/*
+ * Automatically update the active
+ * sidebar item while scrolling.
+ */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        const sections = [
+
+            {
+                id: "dashboardSection",
+                buttonIndex: 0
+            },
+
+            {
+                id: "askRulesSection",
+                buttonIndex: 1
+            },
+
+            {
+                id: "mySituationSection",
+                buttonIndex: 2
+            },
+
+            {
+                id: "whatIfSection",
+                buttonIndex: 3
+            },
+
+            {
+                id: "ruleGraphSection",
+                buttonIndex: 4
+            },
+
+            {
+            id: "challengeSection",
+            buttonIndex: 5
+            }
+
+        ];
+
+
+        const navItems =
+            document.querySelectorAll(
+                ".nav-item"
+            );
+
+
+        window.addEventListener(
+            "scroll",
+            function() {
+
+                let currentSection =
+                    "dashboardSection";
+
+
+                sections.forEach(function(item) {
+
+                    const section =
+                        document.getElementById(
+                            item.id
+                        );
+
+                    if (!section) {
+                        return;
+                    }
+
+
+                    const rect =
+                        section.getBoundingClientRect();
+
+
+                    if (
+                        rect.top <= 180 &&
+                        rect.bottom >= 180
+                    ) {
+
+                        currentSection =
+                            item.id;
+
+                    }
+
+                });
+
+
+                sections.forEach(function(item) {
+
+                    const button =
+                        navItems[
+                            item.buttonIndex
+                        ];
+
+                    if (!button) {
+                        return;
+                    }
+
+
+                    if (
+                        item.id ===
+                        currentSection
+                    ) {
+
+                        button.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                    else {
+
+                        button.classList.remove(
+                            "active"
+                        );
+
+                    }
+
+                });
+
+            }
+
+        );
+
+    }
+
+);
+
+</script>
+
+
+
+<!-- EXISTING APP JAVASCRIPT -->
+<button
+    type="button"
+    onclick="window.location.href='thankyou.html'"
+    style="display:block; margin:40px auto; padding:14px 28px; cursor:pointer;"
+
+>
+    Finish Demo →
+</button>
+<script src="app.js"></script>
+
+
+</body>
+
+</html>
